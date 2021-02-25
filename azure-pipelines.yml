@@ -1,9 +1,4 @@
 # Android
-- task: AndroidSigning@3
-  inputs:
-    apkFiles: '**/*.apk'
-    apksign: false
-    zipalign: false
 # Build your Android project with Gradle.
 # Add steps that test, sign, and distribute the APK, save build artifacts, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/android
@@ -37,3 +32,7 @@ steps:
     artifactName: 'drop'
     artifactType: 'container'
   displayName: Publish artifacts
+  
+- task: AndroidSigning@3
+  inputs:
+    apkFiles: '**/*.apk'
